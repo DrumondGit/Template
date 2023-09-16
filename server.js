@@ -9,7 +9,9 @@ const PORT = process.env.PORT || 3000;
 // Configurações do servidor
 app.use(express.static(path.join(__dirname, 'public'))); // Configura o servidor para servir arquivos estáticos
 app.use(express.json()); // Habilita o parsing de JSON nas requisições
-app.use(cors()); // Habilita o middleware de CORS para permitir requisições de diferentes origens
+app.use(cors({
+  origin: 'https://template-site-tis4.onrender.com'
+})); // Habilita o middleware de CORS para permitir requisições de diferentes origens
 
 // Rotas
 // Rota para criar um novo item no banco de dados
